@@ -10,10 +10,12 @@ public class RaiseTravelRequest {
 	WebDriver driver;
 	
 	Commons commons = new Commons();
+	ApproverUtilities approver = new ApproverUtilities();
 	
 	@BeforeTest
 	public void beforeRaisingRequest() throws InterruptedException{
-		driver = commons.getWebDriver("firefox");
+		
+		driver = commons.getWebDriver("chrome");
 		commons.maximizeWindow(driver);
 		commons.loginAsConsultant(driver);
 	}
@@ -50,6 +52,35 @@ public class RaiseTravelRequest {
 		commons.isElementPresentByXpath(driver, "//tr[@ng-repeat='request in travelRequests.content']");
 		
 		Thread.sleep(5000);
+		
+		//Now logging out from this user
+		commons.logout(driver);
+		
+		//Login as travel user
+		commons.loginAsTravel(driver);
+		
+		//Now the travel user will have to approve the task
+		approver.openInboxTask(driver, toastMessage, false);
+		approver.modifyTravelOptions(driver);
+		approver.reservationAction(driver);	
+		
+		Thread.sleep(5000);
+		//Logging out
+		commons.logout(driver);
+		
+		//Login as user
+		commons.loginAsUser(driver);
+		approver.openInboxTask(driver, toastMessage, true);
+		approver.approveAction(driver);
+		
+		Thread.sleep(5000);
+		//Logging out
+		commons.logout(driver);
+		
+		commons.loginAsTravel(driver);
+		
+		approver.openInboxTask(driver, toastMessage, false);
+		approver.bookingConfirmation(driver);
 	}
 	
 	@AfterTest

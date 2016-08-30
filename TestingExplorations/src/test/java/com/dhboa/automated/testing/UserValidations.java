@@ -13,6 +13,7 @@ public class UserValidations {
 
 	@BeforeTest
 	public void beforeTest() throws InterruptedException {
+		
 		driver = commons.getWebDriver("firefox");
 		commons.maximizeWindow(driver);
 		commons.loginAsConsultant(driver);

@@ -12,7 +12,7 @@ public class AdminValidations {
 
 	@BeforeTest
 	public void beforeTest() throws InterruptedException {
-		driver = commons.getWebDriver("firefox");
+		driver = commons.getWebDriver("chrome");
 		commons.maximizeWindow(driver);
 		commons.loginAsAdmin(driver);
 	}

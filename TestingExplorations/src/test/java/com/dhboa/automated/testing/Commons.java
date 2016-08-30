@@ -4,6 +4,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -13,7 +15,7 @@ import org.testng.Assert;
 public class Commons {
 	private WebDriverWait wait = null;
 	private WebDriver driver = null;
-	private long waitTime = 1000;
+	private long waitTime = 500;
 	public enum browsers {
 		FIREFOX("firefox"), CHROME("chrome"), IE("ie");
 
@@ -31,7 +33,11 @@ public class Commons {
 	public WebDriver getWebDriver(String browserName) {
 		if (browserName.equalsIgnoreCase(browsers.FIREFOX.getBrowserName())) {
 			driver = new FirefoxDriver();
-		} else
+		} else if(browserName.equalsIgnoreCase(browsers.CHROME.getBrowserName())){
+			System.setProperty("webdriver.chrome.driver", "D:\\Office\\Softwares\\chromeSeleniumDriver\\chromedriver.exe");
+			driver = new ChromeDriver();
+		}
+		else
 			driver = null;
 		wait = new WebDriverWait(driver, 20);
 		return driver;
@@ -54,6 +60,11 @@ public class Commons {
 	public void loginAsTravel(WebDriver driver) throws InterruptedException {
 		login(driver, "http://219.65.70.150/trex/#/login?redirect=%2F", "username", "password", "btnLogIn",
 				"travel@darkhorseboa.com", "travel");
+	}
+	
+	public void loginAsUser(WebDriver driver) throws InterruptedException {
+		login(driver, "http://219.65.70.150/trex/#/login?redirect=%2F", "username", "password", "btnLogIn",
+				"user@darkhorseboa.com", "user");
 	}
 
 	public void login(WebDriver driver, String applicationUrl, String userNameElId, String passwordElId,
@@ -169,21 +180,27 @@ public class Commons {
 	
 	public void selectByVisibleTextForEleXpath(WebDriver driver, String xpath, String visibleText) throws InterruptedException {
 		Thread.sleep(waitTime);
-		waitUntilElementVisibilityByXpath(driver, xpath);
+		//waitUntilElementVisibilityByXpath(driver, xpath);
 		Select dropDown = new Select(driver.findElement(By.xpath(xpath)));
+		dropDown.selectByVisibleText(visibleText);
+	}
+	public void selectByVisibleTextForEleXpath(WebElement webElement, String xpath, String visibleText) throws InterruptedException {
+		Thread.sleep(waitTime);
+		//waitUntilElementVisibilityByXpath(driver, xpath);
+		Select dropDown = new Select(webElement.findElement(By.xpath(xpath)));
 		dropDown.selectByVisibleText(visibleText);
 	}
 	
 	public void selectByIndexForEleXpath(WebDriver driver, String xpath, int index) throws InterruptedException {
 		Thread.sleep(waitTime);
-		waitUntilElementVisibilityByXpath(driver, xpath);
+		//waitUntilElementVisibilityByXpath(driver, xpath);
 		Select dropDown = new Select(driver.findElement(By.xpath(xpath)));
 		dropDown.selectByIndex(index);
 	}
 	
 	public void selectByValueForEleXpath(WebDriver driver, String xpath, String value) throws InterruptedException {
 		Thread.sleep(waitTime);
-		waitUntilElementVisibilityByXpath(driver, xpath);
+		//waitUntilElementVisibilityByXpath(driver, xpath);
 		Select dropDown = new Select(driver.findElement(By.xpath(xpath)));
 		dropDown.selectByValue(value);
 	}
