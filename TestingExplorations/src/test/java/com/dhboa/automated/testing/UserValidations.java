@@ -12,7 +12,7 @@ public class UserValidations {
 	Commons commons = new Commons();
 
 	@BeforeTest
-	public void beforeTest() {
+	public void beforeTest() throws InterruptedException {
 		driver = commons.getWebDriver("firefox");
 		commons.maximizeWindow(driver);
 		commons.loginAsConsultant(driver);
@@ -25,7 +25,7 @@ public class UserValidations {
 	}
 
 	@AfterTest
-	public void afterTest() {
+	public void afterTest() throws InterruptedException {
 		commons.logout(driver);
 		driver.quit();
 	}

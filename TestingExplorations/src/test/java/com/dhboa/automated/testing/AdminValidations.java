@@ -1,6 +1,7 @@
 package com.dhboa.automated.testing;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -10,7 +11,7 @@ public class AdminValidations {
 	Commons commons = new Commons();
 
 	@BeforeTest
-	public void beforeTest() {
+	public void beforeTest() throws InterruptedException {
 		driver = commons.getWebDriver("firefox");
 		commons.maximizeWindow(driver);
 		commons.loginAsAdmin(driver);
@@ -22,9 +23,9 @@ public class AdminValidations {
 		commons.checkMenuItems(driver, true, "headingTwo");
 	}
 
-	/*@AfterTest
-	public void afterTest() {
+	@AfterTest
+	public void afterTest() throws InterruptedException {
 		commons.logout(driver);
 		driver.quit();
-	}*/
+	}
 }

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.dhboa.automated.testing.UserValidations">
+      <class name="com.dhboa.automated.testing.RaiseTravelRequest">
         <methods>
-          <include name="roleValidation"/>
-          <include name="beforeTest"/>
-          <include name="afterTest"/>
+          <include name="afterRaisingRequest"/>
+          <include name="beforeRaisingRequest"/>
+          <include name="raiseFlightTravelRequest"/>
         </methods>
-      </class> <!-- com.dhboa.automated.testing.UserValidations -->
+      </class> <!-- com.dhboa.automated.testing.RaiseTravelRequest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

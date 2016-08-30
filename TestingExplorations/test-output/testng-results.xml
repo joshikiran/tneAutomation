@@ -1,39 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="20193" started-at="2016-08-30T07:35:00Z" finished-at="2016-08-30T07:35:21Z">
+  <suite name="Default suite" duration-ms="47452" started-at="2016-08-30T10:58:12Z" finished-at="2016-08-30T10:59:00Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="20193" started-at="2016-08-30T07:35:00Z" finished-at="2016-08-30T07:35:21Z">
-      <class name="com.dhboa.automated.testing.UserValidations">
-        <test-method status="PASS" signature="roleValidation()[pri:0, instance:com.dhboa.automated.testing.UserValidations@3108bc]" name="roleValidation" duration-ms="71" started-at="2016-08-30T13:05:18Z" finished-at="2016-08-30T13:05:18Z">
+    <test name="Default test" duration-ms="47452" started-at="2016-08-30T10:58:12Z" finished-at="2016-08-30T10:59:00Z">
+      <class name="com.dhboa.automated.testing.RaiseTravelRequest">
+        <test-method status="PASS" signature="beforeRaisingRequest()[pri:0, instance:com.dhboa.automated.testing.RaiseTravelRequest@77cd7a0]" name="beforeRaisingRequest" is-config="true" duration-ms="10957" started-at="2016-08-30T16:28:12Z" finished-at="2016-08-30T16:28:23Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- roleValidation -->
-      </class> <!-- com.dhboa.automated.testing.UserValidations -->
-      <class name="com.dhboa.automated.testing.AdminValidations">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.dhboa.automated.testing.AdminValidations@5ec0a365]" name="beforeTest" is-config="true" duration-ms="9193" started-at="2016-08-30T13:05:00Z" finished-at="2016-08-30T13:05:10Z">
+        </test-method> <!-- beforeRaisingRequest -->
+        <test-method status="PASS" signature="raiseFlightTravelRequest()[pri:0, instance:com.dhboa.automated.testing.RaiseTravelRequest@77cd7a0]" name="raiseFlightTravelRequest" duration-ms="33506" started-at="2016-08-30T16:28:23Z" finished-at="2016-08-30T16:28:57Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.dhboa.automated.testing.UserValidations@3108bc]" name="beforeTest" is-config="true" duration-ms="8561" started-at="2016-08-30T13:05:10Z" finished-at="2016-08-30T13:05:18Z">
+        </test-method> <!-- raiseFlightTravelRequest -->
+        <test-method status="PASS" signature="afterRaisingRequest()[pri:0, instance:com.dhboa.automated.testing.RaiseTravelRequest@77cd7a0]" name="afterRaisingRequest" is-config="true" duration-ms="2965" started-at="2016-08-30T16:28:57Z" finished-at="2016-08-30T16:29:00Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="roleValidation()[pri:0, instance:com.dhboa.automated.testing.AdminValidations@5ec0a365]" name="roleValidation" duration-ms="66" started-at="2016-08-30T13:05:18Z" finished-at="2016-08-30T13:05:18Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- roleValidation -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.dhboa.automated.testing.AdminValidations@5ec0a365]" name="afterTest" is-config="true" duration-ms="1424" started-at="2016-08-30T13:05:18Z" finished-at="2016-08-30T13:05:20Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.dhboa.automated.testing.UserValidations@3108bc]" name="afterTest" is-config="true" duration-ms="852" started-at="2016-08-30T13:05:20Z" finished-at="2016-08-30T13:05:21Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- com.dhboa.automated.testing.AdminValidations -->
+        </test-method> <!-- afterRaisingRequest -->
+      </class> <!-- com.dhboa.automated.testing.RaiseTravelRequest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
