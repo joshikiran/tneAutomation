@@ -7,7 +7,7 @@
         <methods>
           <include name="afterRaisingRequest"/>
           <include name="beforeRaisingRequest"/>
-          <include name="raiseFlightTravelRequest"/>
+          <include name="travelFlow"/>
         </methods>
       </class> <!-- com.dhboa.automated.testing.RaiseTravelRequest -->
     </classes>

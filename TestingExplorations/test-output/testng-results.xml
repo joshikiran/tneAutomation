@@ -1,50 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="1" passed="0">
+<testng-results skipped="0" failed="1" total="4" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="10749" started-at="2016-08-30T13:39:10Z" finished-at="2016-08-30T13:39:21Z">
+  <suite name="Default suite" duration-ms="501395" started-at="2016-08-31T10:44:04Z" finished-at="2016-08-31T10:52:26Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="10749" started-at="2016-08-30T13:39:10Z" finished-at="2016-08-30T13:39:21Z">
+    <test name="Default test" duration-ms="501395" started-at="2016-08-31T10:44:04Z" finished-at="2016-08-31T10:52:26Z">
       <class name="com.dhboa.automated.testing.RaiseTravelRequest">
-        <test-method status="PASS" signature="beforeRaisingRequest()[pri:0, instance:com.dhboa.automated.testing.RaiseTravelRequest@77cd7a0]" name="beforeRaisingRequest" is-config="true" duration-ms="9596" started-at="2016-08-30T19:09:10Z" finished-at="2016-08-30T19:09:20Z">
+        <test-method status="PASS" signature="beforeRaisingRequest()[pri:0, instance:com.dhboa.automated.testing.RaiseTravelRequest@3d51f06e]" name="beforeRaisingRequest" is-config="true" duration-ms="4099" started-at="2016-08-31T16:14:04Z" finished-at="2016-08-31T16:14:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeRaisingRequest -->
-        <test-method status="FAIL" signature="raiseFlightTravelRequest()[pri:0, instance:com.dhboa.automated.testing.RaiseTravelRequest@77cd7a0]" name="raiseFlightTravelRequest" duration-ms="569" started-at="2016-08-30T19:09:20Z" finished-at="2016-08-30T19:09:20Z">
-          <exception class="org.openqa.selenium.ElementNotVisibleException">
+        <test-method status="PASS" signature="approvalFlowInPolicy()[pri:0, instance:com.dhboa.automated.testing.RaiseTravelRequest@3d51f06e]" name="approvalFlowInPolicy" duration-ms="200332" started-at="2016-08-31T16:14:08Z" finished-at="2016-08-31T16:17:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- approvalFlowInPolicy -->
+        <test-method status="PASS" signature="approvalFlowOutPolicy()[pri:0, instance:com.dhboa.automated.testing.RaiseTravelRequest@3d51f06e]" name="approvalFlowOutPolicy" duration-ms="201771" started-at="2016-08-31T16:17:29Z" finished-at="2016-08-31T16:20:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- approvalFlowOutPolicy -->
+        <test-method status="PASS" signature="justRaisingFlightOneWayRequest()[pri:0, instance:com.dhboa.automated.testing.RaiseTravelRequest@3d51f06e]" name="justRaisingFlightOneWayRequest" duration-ms="55603" started-at="2016-08-31T16:20:51Z" finished-at="2016-08-31T16:21:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- justRaisingFlightOneWayRequest -->
+        <test-method status="FAIL" signature="travelFlow()[pri:0, instance:com.dhboa.automated.testing.RaiseTravelRequest@3d51f06e]" name="travelFlow" duration-ms="38149" started-at="2016-08-31T16:21:46Z" finished-at="2016-08-31T16:22:24Z">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[element not visible
-  (Session info: chrome=52.0.2743.116)
-  (Driver info: chromedriver=2.23.409699 (49b0fa931cda1caad0ae15b7d1b68004acd05129),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 26 milliseconds
+              <![CDATA[Timed out after 20 seconds waiting for visibility of element located by By.xpath: //a[@href='#/travel/new']
 Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
-System info: host: 'DHL-HYD1024', ip: '192.168.10.42', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_92'
+System info: host: 'DHL-HYD1024', ip: '14.96.42.123', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_92'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.23.409699 (49b0fa931cda1caad0ae15b7d1b68004acd05129), userDataDir=C:\Users\DARKHO~1\AppData\Local\Temp\scoped_dir8288_16829}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=52.0.2743.116, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 41babe183302b8958ff02ab80dd6f2dc]]>
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.23.409699 (49b0fa931cda1caad0ae15b7d1b68004acd05129), userDataDir=C:\Users\DARKHO~1\AppData\Local\Temp\scoped_dir7452_10021}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=52.0.2743.116, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 40ee3b4bd6d95f0b45e3e08c23288b68]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementNotVisibleException: element not visible
-  (Session info: chrome=52.0.2743.116)
-  (Driver info: chromedriver=2.23.409699 (49b0fa931cda1caad0ae15b7d1b68004acd05129),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 26 milliseconds
+              <![CDATA[org.openqa.selenium.TimeoutException: Timed out after 20 seconds waiting for visibility of element located by By.xpath: //a[@href='#/travel/new']
 Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
-System info: host: 'DHL-HYD1024', ip: '192.168.10.42', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_92'
+System info: host: 'DHL-HYD1024', ip: '14.96.42.123', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_92'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.23.409699 (49b0fa931cda1caad0ae15b7d1b68004acd05129), userDataDir=C:\Users\DARKHO~1\AppData\Local\Temp\scoped_dir8288_16829}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=52.0.2743.116, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 41babe183302b8958ff02ab80dd6f2dc
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)
-	at com.dhboa.automated.testing.Commons.clickElementByXpath(Commons.java:103)
-	at com.dhboa.automated.testing.RaiseTravelRequest.raiseFlightTravelRequest(RaiseTravelRequest.java:25)
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.23.409699 (49b0fa931cda1caad0ae15b7d1b68004acd05129), userDataDir=C:\Users\DARKHO~1\AppData\Local\Temp\scoped_dir7452_10021}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=52.0.2743.116, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 40ee3b4bd6d95f0b45e3e08c23288b68
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)
+	at com.dhboa.automated.testing.Commons.waitUntilElementVisibilityByXpath(Commons.java:169)
+	at com.dhboa.automated.testing.Commons.clickElementByXpath(Commons.java:114)
+	at com.dhboa.automated.testing.PortalActions.clickOnMenuItem(PortalActions.java:28)
+	at com.dhboa.automated.testing.RaiseTravelRequest.raiseFlightOneWayTravelRequest(RaiseTravelRequest.java:110)
+	at com.dhboa.automated.testing.RaiseTravelRequest.travelFlow(RaiseTravelRequest.java:45)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -71,70 +73,11 @@ Session ID: 41babe183302b8958ff02ab80dd6f2dc
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementNotVisibleException -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- raiseFlightTravelRequest -->
-        <test-method status="FAIL" signature="afterRaisingRequest()[pri:0, instance:com.dhboa.automated.testing.RaiseTravelRequest@77cd7a0]" name="afterRaisingRequest" is-config="true" duration-ms="0" started-at="2016-08-30T19:09:20Z" finished-at="2016-08-30T19:09:20Z">
-          <exception class="org.openqa.selenium.ElementNotVisibleException">
-            <message>
-              <![CDATA[element not visible
-  (Session info: chrome=52.0.2743.116)
-  (Driver info: chromedriver=2.23.409699 (49b0fa931cda1caad0ae15b7d1b68004acd05129),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 24 milliseconds
-Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
-System info: host: 'DHL-HYD1024', ip: '192.168.10.42', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_92'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.23.409699 (49b0fa931cda1caad0ae15b7d1b68004acd05129), userDataDir=C:\Users\DARKHO~1\AppData\Local\Temp\scoped_dir8288_16829}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=52.0.2743.116, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 41babe183302b8958ff02ab80dd6f2dc]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementNotVisibleException: element not visible
-  (Session info: chrome=52.0.2743.116)
-  (Driver info: chromedriver=2.23.409699 (49b0fa931cda1caad0ae15b7d1b68004acd05129),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 24 milliseconds
-Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
-System info: host: 'DHL-HYD1024', ip: '192.168.10.42', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_92'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.23.409699 (49b0fa931cda1caad0ae15b7d1b68004acd05129), userDataDir=C:\Users\DARKHO~1\AppData\Local\Temp\scoped_dir8288_16829}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=52.0.2743.116, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 41babe183302b8958ff02ab80dd6f2dc
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)
-	at com.dhboa.automated.testing.Commons.clickElementByXpath(Commons.java:103)
-	at com.dhboa.automated.testing.Commons.logout(Commons.java:81)
-	at com.dhboa.automated.testing.RaiseTravelRequest.afterRaisingRequest(RaiseTravelRequest.java:88)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
-	at org.testng.TestRunner.afterRun(TestRunner.java:1021)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementNotVisibleException -->
+        </test-method> <!-- travelFlow -->
+        <test-method status="PASS" signature="afterRaisingRequest()[pri:0, instance:com.dhboa.automated.testing.RaiseTravelRequest@3d51f06e]" name="afterRaisingRequest" is-config="true" duration-ms="1393" started-at="2016-08-31T16:22:24Z" finished-at="2016-08-31T16:22:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterRaisingRequest -->

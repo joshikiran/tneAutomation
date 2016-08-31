@@ -9,7 +9,7 @@ public class ApproveRequest {
 	WebDriver driver;
 
 	Commons commons = new Commons();
-	ApproverUtilities approver = new ApproverUtilities();
+	ApproverUtilities approver = new ApproverUtilities(commons);
 	
 	@BeforeTest
 	public void beforeRaisingRequest() throws InterruptedException{

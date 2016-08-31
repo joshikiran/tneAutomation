@@ -15,7 +15,8 @@ import org.testng.Assert;
 public class Commons {
 	private WebDriverWait wait = null;
 	private WebDriver driver = null;
-	private long waitTime = 500;
+	private long waitTime = 1000;
+	private long timeToLogin = 5000;
 	public enum browsers {
 		FIREFOX("firefox"), CHROME("chrome"), IE("ie");
 
@@ -50,21 +51,31 @@ public class Commons {
 	public void loginAsAdmin(WebDriver driver) throws InterruptedException {
 		login(driver, "http://219.65.70.150/trex/#/login?redirect=%2F", "username", "password", "btnLogIn",
 				"admin@default.com", "pass");
+		Thread.sleep(timeToLogin);
 	}
 
 	public void loginAsConsultant(WebDriver driver) throws InterruptedException {
 		login(driver, "http://219.65.70.150/trex/#/login?redirect=%2F", "username", "password", "btnLogIn",
 				"cons@darkhorseboa.com", "cons");
+		Thread.sleep(timeToLogin);
 	}
 
 	public void loginAsTravel(WebDriver driver) throws InterruptedException {
 		login(driver, "http://219.65.70.150/trex/#/login?redirect=%2F", "username", "password", "btnLogIn",
 				"travel@darkhorseboa.com", "travel");
+		Thread.sleep(timeToLogin);
 	}
 	
 	public void loginAsUser(WebDriver driver) throws InterruptedException {
 		login(driver, "http://219.65.70.150/trex/#/login?redirect=%2F", "username", "password", "btnLogIn",
 				"user@darkhorseboa.com", "user");
+		Thread.sleep(timeToLogin);
+	}
+	
+	public void loginAsRakesh(WebDriver driver) throws InterruptedException {
+		login(driver, "http://219.65.70.150/trex/#/login?redirect=%2F", "username", "password", "btnLogIn",
+				"rakesh@darkhorseboa.com", "rakesh");
+		Thread.sleep(timeToLogin);
 	}
 
 	public void login(WebDriver driver, String applicationUrl, String userNameElId, String passwordElId,
@@ -100,6 +111,7 @@ public class Commons {
 
 	public void clickElementByXpath(WebDriver driver, String xpath) throws InterruptedException {
 		Thread.sleep(waitTime);
+		waitUntilElementVisibilityByXpath(driver, xpath);
 		driver.findElement(By.xpath(xpath)).click();
 	}
 
@@ -155,8 +167,7 @@ public class Commons {
 
 	public void waitUntilElementVisibilityByXpath(WebDriver driver, String xpath) {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
-	}
-
+	}	
 	public void selectByVisibleTextForEleId(WebDriver driver, String id, String visibleText) throws InterruptedException {
 		Thread.sleep(waitTime);
 		waitUntilElementVisibilityById(driver, id);
