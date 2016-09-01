@@ -135,6 +135,7 @@ public class RaiseTravelRequest {
 		portalActions.clickOnMenuItem(driver, "myrequests");
 		portalActions.searchByReference(driver, toastMessage);
 		commons.isElementPresentByXpath(driver, "//tr[@ng-repeat='request in travelRequests.content']");
+		portalActions.clickOnMenuItem(driver, "travel");
 		Thread.sleep(toastWaitTime);
 		// Now logging out from this user
 		commons.logout(driver);

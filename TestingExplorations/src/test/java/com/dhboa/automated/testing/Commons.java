@@ -111,7 +111,7 @@ public class Commons {
 
 	public void clickElementByXpath(WebDriver driver, String xpath) throws InterruptedException {
 		Thread.sleep(waitTime);
-		waitUntilElementVisibilityByXpath(driver, xpath);
+		//waitUntilElementVisibilityByXpath(driver, xpath);
 		driver.findElement(By.xpath(xpath)).click();
 	}
 
