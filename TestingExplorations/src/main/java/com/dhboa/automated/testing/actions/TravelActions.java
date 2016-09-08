@@ -141,4 +141,15 @@ public class TravelActions {
 		commons.clickElementById(driver, "btnDiscardDraft");
 		Thread.sleep(commons.longest);
 	}
+
+	public void withdrawTravelRequest(WebDriver driver, String taskId) throws InterruptedException {
+		myInboxActions.searchByReference(driver, taskId);
+		commons.isElementPresentByXpath(driver, "//tr[@ng-repeat='request in travelRequests.content']");
+		commons.clickElementByXpath(driver, ".//*[@id='container']//table/tbody/tr/td[6]/a");
+		Thread.sleep(commons.longest);
+		commons.clickElementByXpath(driver, "//button[@ng-click='withdraw()']");
+		commons.setValueToElementByXpath(driver, "//textarea[@ng-model='postData.comments']",
+				"Reservation and pricing done");
+		commons.clickElementByXpath(driver, "//button[@ng-click='actOnTask()']");
+	}
 }

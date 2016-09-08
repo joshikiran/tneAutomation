@@ -72,13 +72,15 @@ public class Travel {
 				flight.discardTravelDraft(driver, travelProps, logger, fileName);
 				flight.showApprovals(driver, travelProps, logger, fileName);
 				flight.submitTravelRequest(driver, travelProps, defaultFilePath, logger, fileName);
-				Thread.sleep(commons.normal);
+				flight.withdrawTravelRequest(driver, travelProps, logger, fileName);
+				Thread.sleep(commons.longest);
 				travelActions.clickOnTravel(driver);
 				commons.logout(driver);
 				flight.approvalFlow(driver, travelProps, logger, fileName);
 				logger.info("DH Automation test case : Travel {}: travelFlow : Test Case Successful", fileName);
 			} catch (Exception e) {
 				logger.info("DH Automation test case : Travel {}: travelFlow : Test Case failed", fileName);
+				logger.error("Exception details {}", e);
 			}
 		}
 		
@@ -86,7 +88,7 @@ public class Travel {
 			onAfterTest();
 		}
 	}
-
+	
 	@AfterTest
 	public void onAfterTest() throws InterruptedException {
 		logger.info("DH Automation test case : Travel {}: onAfterTest : Browser quit action");

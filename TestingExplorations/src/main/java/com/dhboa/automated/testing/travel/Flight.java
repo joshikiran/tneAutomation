@@ -186,6 +186,25 @@ public class Flight {
 		}
 	}
 
+	public void withdrawTravelRequest(WebDriver driver, Properties props, Logger logger, String fileName)
+			throws InterruptedException {
+		boolean toBeExecuted = false;
+		String travelReferenceNo = null;
+		try {
+			toBeExecuted = Boolean.valueOf(props.getProperty("travel.test.flight.withdrawTravelRequest"));
+			travelReferenceNo=props.getProperty("travel.flight.referenceNo");
+		} catch (Exception e) {
+			toBeExecuted = false;
+		}
+		if (toBeExecuted) {
+			//Assuming you are on the home page
+			travelActions.clickOnMyRequests(driver);
+			travelActions.withdrawTravelRequest(driver, travelReferenceNo);
+			logger.info("DH Automation test case : Travel {}: withdrawTravelRequest : This test case is successfully executed",
+					fileName);
+		}
+	}
+
 	public void approvalFlow(WebDriver driver, Properties travelProps, Logger logger, String fileName)
 			throws InterruptedException {
 		boolean toBeExecuted = false;
