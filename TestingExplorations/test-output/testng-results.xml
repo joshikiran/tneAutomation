@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="24530" started-at="2016-09-08T05:47:57Z" finished-at="2016-09-08T05:48:21Z">
+  <suite name="Default suite" duration-ms="67973" started-at="2016-09-08T11:07:53Z" finished-at="2016-09-08T11:09:01Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="24530" started-at="2016-09-08T05:47:57Z" finished-at="2016-09-08T05:48:21Z">
+    <test name="Default test" duration-ms="67973" started-at="2016-09-08T11:07:53Z" finished-at="2016-09-08T11:09:01Z">
       <class name="com.dhboa.automated.testing.core.Travel">
-        <test-method status="PASS" signature="onBeforeTesting()[pri:0, instance:com.dhboa.automated.testing.core.Travel@30b8a058]" name="onBeforeTesting" is-config="true" duration-ms="4154" started-at="2016-09-08T11:17:57Z" finished-at="2016-09-08T11:18:01Z">
+        <test-method status="PASS" signature="onBeforeTesting()[pri:0, instance:com.dhboa.automated.testing.core.Travel@229f66ed]" name="onBeforeTesting" is-config="true" duration-ms="4194" started-at="2016-09-08T16:37:53Z" finished-at="2016-09-08T16:37:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- onBeforeTesting -->
-        <test-method status="PASS" signature="travelFlow()[pri:0, instance:com.dhboa.automated.testing.core.Travel@30b8a058]" name="travelFlow" duration-ms="19298" started-at="2016-09-08T11:18:01Z" description="Complete Flow of travel" finished-at="2016-09-08T11:18:20Z">
+        <test-method status="PASS" signature="travelFlow()[pri:0, instance:com.dhboa.automated.testing.core.Travel@229f66ed]" name="travelFlow" duration-ms="49390" started-at="2016-09-08T16:37:57Z" description="Complete Flow of travel" finished-at="2016-09-08T16:38:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- travelFlow -->
-        <test-method status="PASS" signature="onAfterTest()[pri:0, instance:com.dhboa.automated.testing.core.Travel@30b8a058]" name="onAfterTest" is-config="true" duration-ms="1078" started-at="2016-09-08T11:18:20Z" finished-at="2016-09-08T11:18:21Z">
+        <test-method status="PASS" signature="onAfterTest()[pri:0, instance:com.dhboa.automated.testing.core.Travel@229f66ed]" name="onAfterTest" is-config="true" duration-ms="14374" started-at="2016-09-08T16:38:47Z" finished-at="2016-09-08T16:39:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- onAfterTest -->
