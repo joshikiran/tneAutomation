@@ -10,6 +10,8 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -18,6 +20,7 @@ import com.dhboa.automated.testing.actions.CommonActions;
 import com.dhboa.automated.testing.actions.TravelActions;
 import com.dhboa.automated.testing.travel.Flight;
 
+@Service
 public class Travel {
 
 	WebDriver driver = null;
@@ -47,9 +50,15 @@ public class Travel {
 		}
 	}
 
+	@Autowired
 	@Test(description = "Complete Flow of travel")
-	public void travelFlow() throws InterruptedException {
+	public void travelFlow() throws InterruptedException, FileNotFoundException, IOException {
 		Properties travelProps = null;
+		boolean isWebApp = false;
+		if(travelPropsList.isEmpty()){
+			onBeforeTesting();
+			isWebApp = true;
+		}
 		for (String fileName : travelPropsList.keySet()) {
 			try {
 				travelProps = travelPropsList.get(fileName);
@@ -71,6 +80,10 @@ public class Travel {
 			} catch (Exception e) {
 				logger.info("DH Automation test case : Travel {}: travelFlow : Test Case failed", fileName);
 			}
+		}
+		
+		if(isWebApp){
+			onAfterTest();
 		}
 	}
 

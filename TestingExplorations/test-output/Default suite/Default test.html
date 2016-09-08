@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Aug 31 16:14:04 IST 2016</td>
+<td>Started on:</td><td>Thu Sep 08 11:17:57 IST 2016</td>
 </tr>
-<tr><td>Total time:</td><td>501 seconds (501395 ms)</td>
+<tr><td>Total time:</td><td>24 seconds (24530 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,94 +67,6 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='com.dhboa.automated.testing.RaiseTravelRequest.travelFlow()'><b>travelFlow</b><br>Test class: com.dhboa.automated.testing.RaiseTravelRequest</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Timed out after 20 seconds waiting for visibility of element located by By.xpath: //a[@href=&apos;#/travel/new&apos;]
-Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
-System info: host: &apos;DHL-HYD1024&apos;, ip: &apos;14.96.42.123&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_92&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.23.409699 (49b0fa931cda1caad0ae15b7d1b68004acd05129), userDataDir=C:\Users\DARKHO~1\AppData\Local\Temp\scoped_dir7452_10021}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=52.0.2743.116, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 40ee3b4bd6d95f0b45e3e08c23288b68
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)
-	at com.dhboa.automated.testing.Commons.waitUntilElementVisibilityByXpath(Commons.java:169)
-	at com.dhboa.automated.testing.Commons.clickElementByXpath(Commons.java:114)
-	at com.dhboa.automated.testing.PortalActions.clickOnMenuItem(PortalActions.java:28)
-	at com.dhboa.automated.testing.RaiseTravelRequest.raiseFlightOneWayTravelRequest(RaiseTravelRequest.java:110)
-	at com.dhboa.automated.testing.RaiseTravelRequest.travelFlow(RaiseTravelRequest.java:45)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1046056441", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1046056441'><pre>org.openqa.selenium.TimeoutException: Timed out after 20 seconds waiting for visibility of element located by By.xpath: //a[@href=&apos;#/travel/new&apos;]
-Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
-System info: host: &apos;DHL-HYD1024&apos;, ip: &apos;14.96.42.123&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_92&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.23.409699 (49b0fa931cda1caad0ae15b7d1b68004acd05129), userDataDir=C:\Users\DARKHO~1\AppData\Local\Temp\scoped_dir7452_10021}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=52.0.2743.116, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 40ee3b4bd6d95f0b45e3e08c23288b68
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)
-	at com.dhboa.automated.testing.Commons.waitUntilElementVisibilityByXpath(Commons.java:169)
-	at com.dhboa.automated.testing.Commons.clickElementByXpath(Commons.java:114)
-	at com.dhboa.automated.testing.PortalActions.clickOnMenuItem(PortalActions.java:28)
-	at com.dhboa.automated.testing.RaiseTravelRequest.raiseFlightOneWayTravelRequest(RaiseTravelRequest.java:110)
-	at com.dhboa.automated.testing.RaiseTravelRequest.travelFlow(RaiseTravelRequest.java:45)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
-</pre></div></td>
-<td>38</td>
-<td>com.dhboa.automated.testing.RaiseTravelRequest@3d51f06e</td></tr>
-</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -163,20 +75,10 @@ Session ID: 40ee3b4bd6d95f0b45e3e08c23288b68
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.dhboa.automated.testing.RaiseTravelRequest.approvalFlowInPolicy()'><b>approvalFlowInPolicy</b><br>Test class: com.dhboa.automated.testing.RaiseTravelRequest</td>
+<td title='com.dhboa.automated.testing.core.Travel.travelFlow()'><b>travelFlow</b><br>Test class: com.dhboa.automated.testing.core.Travel<br>Test method: Complete Flow of travel</td>
 <td></td>
-<td>200</td>
-<td>com.dhboa.automated.testing.RaiseTravelRequest@3d51f06e</td></tr>
-<tr>
-<td title='com.dhboa.automated.testing.RaiseTravelRequest.approvalFlowOutPolicy()'><b>approvalFlowOutPolicy</b><br>Test class: com.dhboa.automated.testing.RaiseTravelRequest</td>
-<td></td>
-<td>201</td>
-<td>com.dhboa.automated.testing.RaiseTravelRequest@3d51f06e</td></tr>
-<tr>
-<td title='com.dhboa.automated.testing.RaiseTravelRequest.justRaisingFlightOneWayRequest()'><b>justRaisingFlightOneWayRequest</b><br>Test class: com.dhboa.automated.testing.RaiseTravelRequest</td>
-<td></td>
-<td>55</td>
-<td>com.dhboa.automated.testing.RaiseTravelRequest@3d51f06e</td></tr>
+<td>19</td>
+<td>com.dhboa.automated.testing.core.Travel@30b8a058</td></tr>
 </table><p>
 </body>
 </html>

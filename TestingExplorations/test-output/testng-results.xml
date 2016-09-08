@@ -1,87 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="4" passed="3">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="501395" started-at="2016-08-31T10:44:04Z" finished-at="2016-08-31T10:52:26Z">
+  <suite name="Default suite" duration-ms="24530" started-at="2016-09-08T05:47:57Z" finished-at="2016-09-08T05:48:21Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="501395" started-at="2016-08-31T10:44:04Z" finished-at="2016-08-31T10:52:26Z">
-      <class name="com.dhboa.automated.testing.RaiseTravelRequest">
-        <test-method status="PASS" signature="beforeRaisingRequest()[pri:0, instance:com.dhboa.automated.testing.RaiseTravelRequest@3d51f06e]" name="beforeRaisingRequest" is-config="true" duration-ms="4099" started-at="2016-08-31T16:14:04Z" finished-at="2016-08-31T16:14:08Z">
+    <test name="Default test" duration-ms="24530" started-at="2016-09-08T05:47:57Z" finished-at="2016-09-08T05:48:21Z">
+      <class name="com.dhboa.automated.testing.core.Travel">
+        <test-method status="PASS" signature="onBeforeTesting()[pri:0, instance:com.dhboa.automated.testing.core.Travel@30b8a058]" name="onBeforeTesting" is-config="true" duration-ms="4154" started-at="2016-09-08T11:17:57Z" finished-at="2016-09-08T11:18:01Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeRaisingRequest -->
-        <test-method status="PASS" signature="approvalFlowInPolicy()[pri:0, instance:com.dhboa.automated.testing.RaiseTravelRequest@3d51f06e]" name="approvalFlowInPolicy" duration-ms="200332" started-at="2016-08-31T16:14:08Z" finished-at="2016-08-31T16:17:29Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- approvalFlowInPolicy -->
-        <test-method status="PASS" signature="approvalFlowOutPolicy()[pri:0, instance:com.dhboa.automated.testing.RaiseTravelRequest@3d51f06e]" name="approvalFlowOutPolicy" duration-ms="201771" started-at="2016-08-31T16:17:29Z" finished-at="2016-08-31T16:20:51Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- approvalFlowOutPolicy -->
-        <test-method status="PASS" signature="justRaisingFlightOneWayRequest()[pri:0, instance:com.dhboa.automated.testing.RaiseTravelRequest@3d51f06e]" name="justRaisingFlightOneWayRequest" duration-ms="55603" started-at="2016-08-31T16:20:51Z" finished-at="2016-08-31T16:21:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- justRaisingFlightOneWayRequest -->
-        <test-method status="FAIL" signature="travelFlow()[pri:0, instance:com.dhboa.automated.testing.RaiseTravelRequest@3d51f06e]" name="travelFlow" duration-ms="38149" started-at="2016-08-31T16:21:46Z" finished-at="2016-08-31T16:22:24Z">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Timed out after 20 seconds waiting for visibility of element located by By.xpath: //a[@href='#/travel/new']
-Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
-System info: host: 'DHL-HYD1024', ip: '14.96.42.123', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_92'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.23.409699 (49b0fa931cda1caad0ae15b7d1b68004acd05129), userDataDir=C:\Users\DARKHO~1\AppData\Local\Temp\scoped_dir7452_10021}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=52.0.2743.116, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 40ee3b4bd6d95f0b45e3e08c23288b68]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Timed out after 20 seconds waiting for visibility of element located by By.xpath: //a[@href='#/travel/new']
-Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
-System info: host: 'DHL-HYD1024', ip: '14.96.42.123', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_92'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.23.409699 (49b0fa931cda1caad0ae15b7d1b68004acd05129), userDataDir=C:\Users\DARKHO~1\AppData\Local\Temp\scoped_dir7452_10021}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=52.0.2743.116, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 40ee3b4bd6d95f0b45e3e08c23288b68
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)
-	at com.dhboa.automated.testing.Commons.waitUntilElementVisibilityByXpath(Commons.java:169)
-	at com.dhboa.automated.testing.Commons.clickElementByXpath(Commons.java:114)
-	at com.dhboa.automated.testing.PortalActions.clickOnMenuItem(PortalActions.java:28)
-	at com.dhboa.automated.testing.RaiseTravelRequest.raiseFlightOneWayTravelRequest(RaiseTravelRequest.java:110)
-	at com.dhboa.automated.testing.RaiseTravelRequest.travelFlow(RaiseTravelRequest.java:45)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        </test-method> <!-- onBeforeTesting -->
+        <test-method status="PASS" signature="travelFlow()[pri:0, instance:com.dhboa.automated.testing.core.Travel@30b8a058]" name="travelFlow" duration-ms="19298" started-at="2016-09-08T11:18:01Z" description="Complete Flow of travel" finished-at="2016-09-08T11:18:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- travelFlow -->
-        <test-method status="PASS" signature="afterRaisingRequest()[pri:0, instance:com.dhboa.automated.testing.RaiseTravelRequest@3d51f06e]" name="afterRaisingRequest" is-config="true" duration-ms="1393" started-at="2016-08-31T16:22:24Z" finished-at="2016-08-31T16:22:26Z">
+        <test-method status="PASS" signature="onAfterTest()[pri:0, instance:com.dhboa.automated.testing.core.Travel@30b8a058]" name="onAfterTest" is-config="true" duration-ms="1078" started-at="2016-09-08T11:18:20Z" finished-at="2016-09-08T11:18:21Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterRaisingRequest -->
-      </class> <!-- com.dhboa.automated.testing.RaiseTravelRequest -->
+        </test-method> <!-- onAfterTest -->
+      </class> <!-- com.dhboa.automated.testing.core.Travel -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
