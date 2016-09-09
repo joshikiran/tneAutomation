@@ -55,7 +55,7 @@ public class Travel {
 	public void travelFlow() throws InterruptedException, FileNotFoundException, IOException {
 		Properties travelProps = null;
 		boolean isWebApp = false;
-		if(travelPropsList.isEmpty()){
+		if (travelPropsList.isEmpty()) {
 			onBeforeTesting();
 			isWebApp = true;
 		}
@@ -65,21 +65,21 @@ public class Travel {
 				travelProps = travelPropsList.get(fileName);
 				commons.login(driver, travelProps.getProperty("travel.credentials.initiator"));
 				travelActions.clickOnTravel(driver);
-				flight.createTravelDraft(driver, travelProps, defaultFilePath, logger, fileName);
+				flight.createFlightDraft(driver, travelProps, defaultFilePath, logger, fileName);
 				// This is because it will take time for saving into database
 				Thread.sleep(commons.normal);
-				flight.checkTravelDraft(driver, travelProps, logger, fileName);
-				flight.editTravelDraft(driver, travelProps, logger, fileName);
-				flight.discardTravelDraft(driver, travelProps, logger, fileName);
-				flight.showApprovals(driver, travelProps, logger, fileName);
-				flight.submitTravelRequest(driver, travelProps, defaultFilePath, logger, fileName);
-				flight.withdrawTravelRequest(driver, travelProps, logger, fileName);
+				travelActions.checkTravelDraft(driver, travelProps, logger, fileName);
+				travelActions.editTravelDraft(driver, travelProps, logger, fileName);
+				travelActions.discardTravelDraft(driver, travelProps, logger, fileName);
+				travelActions.showApprovals(driver, travelProps, logger, fileName);
+				travelActions.submitTravelRequest(driver, travelProps, defaultFilePath, logger, fileName);
+				travelActions.withdrawTravelRequest(driver, travelProps, logger, fileName);
 				Thread.sleep(commons.longest);
 				travelActions.clickOnTravel(driver);
 				commons.logout(driver);
-				flight.claimTask(driver, travelProps, logger, fileName);
-				flight.revokeTask(driver, travelProps, logger, fileName);
-				flight.approvalFlow(driver, travelProps, logger, fileName);
+				travelActions.claimTask(driver, travelProps, logger, fileName);
+				travelActions.revokeTask(driver, travelProps, logger, fileName);
+				travelActions.approvalFlow(driver, travelProps, logger, fileName);
 				logger.info("DH Automation test case : Travel {}: travelFlow : Test Case Successful", fileName);
 				logger.info("----------------------------------------------------------------------------------");
 			} catch (Exception e) {
@@ -87,12 +87,12 @@ public class Travel {
 				logger.error("Exception details {}", e);
 				commons.logout(driver);
 			}
-		}		
-		if(isWebApp){
+		}
+		if (isWebApp) {
 			onAfterTest();
 		}
 	}
-	
+
 	@AfterTest
 	public void onAfterTest() throws InterruptedException {
 		logger.info("DH Automation test case : Travel {}: onAfterTest : Browser quit action");
