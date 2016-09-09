@@ -315,8 +315,9 @@ public class Flight {
 			myInboxActions.searchByReference(driver, travelRefNo);
 			commonActions.checkElementPresentByXpath(driver, ".//*[@id='inboxTaskContainer']//table/tbody/tr/td[4]/a");
 			commonActions.clickElementByXpath(driver, ".//*[@id='inboxTaskContainer']//table/tbody/tr/td[4]/a");
-			Thread.sleep(commonActions.longest);
+			Thread.sleep(commonActions.normal);
 			myInboxActions.revokeAction(driver);
+			Thread.sleep(commonActions.longest);
 			commonActions.logout(driver);
 			logger.info("DH Automation test case : Travel {}: revokeTask : This test case is successfully executed ",
 					fileName);
