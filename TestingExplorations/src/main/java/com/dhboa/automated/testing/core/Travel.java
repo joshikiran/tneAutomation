@@ -71,6 +71,7 @@ public class Travel {
 				travelActions.checkTravelDraft(driver, travelProps, logger, fileName);
 				travelActions.editTravelDraft(driver, travelProps, logger, fileName);
 				travelActions.discardTravelDraft(driver, travelProps, logger, fileName);
+				travelActions.deletingTravelDrafts(driver, travelProps, logger, fileName);
 				travelActions.showApprovals(driver, travelProps, logger, fileName);
 				travelActions.submitTravelRequest(driver, travelProps, defaultFilePath, logger, fileName);
 				travelActions.withdrawTravelRequest(driver, travelProps, logger, fileName);
