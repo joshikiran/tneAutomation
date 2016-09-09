@@ -46,7 +46,7 @@ public class Flight {
 			// already
 			// clicked travel
 			travelActions.clickOnNewTravelRequest(driver);
-			description = travelActions.fillFlightDetails(driver, props);
+			description = travelActions.fillFlightDetails(driver, props, logger);
 			props.setProperty("travel.flight.travelDescription", description);
 			commonActions.modifyProperties(defaultFilePath + "Travel\\travelRequest.properties",
 					"travel.flight.travelDescription", description);

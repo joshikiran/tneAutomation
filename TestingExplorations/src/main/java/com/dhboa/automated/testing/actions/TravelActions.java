@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
+import org.slf4j.Logger;
 
 public class TravelActions {
 	CommonActions commons = null;
@@ -19,7 +20,7 @@ public class TravelActions {
 		commons.clickOnMenuItem(driver, "travel");
 	}
 
-	public void clickOnMyRequests(WebDriver driver) throws InterruptedException {		
+	public void clickOnMyRequests(WebDriver driver) throws InterruptedException {
 		commons.clickOnMenuItem(driver, "myrequests");
 	}
 
@@ -41,7 +42,7 @@ public class TravelActions {
 	 * @return
 	 * @throws InterruptedException
 	 */
-	public String fillFlightDetails(WebDriver driver, Properties props) throws InterruptedException {
+	public String fillFlightDetails(WebDriver driver, Properties props, Logger logger) throws InterruptedException {
 		String flightTripType = null;
 		String flightTravelType = null;
 		String flightTravelClass = null;
@@ -52,6 +53,9 @@ public class TravelActions {
 		String otherComments = null;
 		String travelReason = null;
 		String travelDescription = null;
+		boolean isCallingCardRequired = false;
+		boolean isInsuranceRequired = false;
+		boolean isVisaRequired = false;
 		try {
 			flightTripType = props.getProperty("travel.flight.flightTripType");
 			flightTravelType = props.getProperty("travel.flight.flightTravelType");
@@ -62,20 +66,39 @@ public class TravelActions {
 			flightToDate = props.getProperty("travel.flight.flightToDate");
 			otherComments = props.getProperty("travel.flight.otherComments");
 			travelReason = props.getProperty("travel.flight.travelReason");
+			isCallingCardRequired = Boolean.valueOf(props.getProperty("travel.flight.isCallingCardRequired"));
+			isInsuranceRequired = Boolean.valueOf(props.getProperty("travel.flight.isInsuranceRequired"));
+			isVisaRequired = Boolean.valueOf(props.getProperty("travel.flight.isVisaRequired"));
 			travelDescription = String.valueOf(new Date().getTime());
 		} catch (Exception e) {
-
+			logger.error("Exception while reading some of the properties", e);
 		}
 		commons.waitUntilElementVisibilityById(driver, "myId2");
 		commons.clickElementById(driver, "myId2");
 		commons.waitUntilElementVisibilityByXpath(driver, "//a[@data-target='#flight']");
 		commons.clickElementByXpath(driver, "//a[@data-target='#flight']");
+		Thread.sleep(commons.shortest);
+		commons.clickElementByXpath(driver, ".//*[@id='flight']//button[text()='Close']");
+		
+		//Click on flight again
+		commons.waitUntilElementVisibilityById(driver, "myId2");
+		commons.clickElementById(driver, "myId2");
+		commons.waitUntilElementVisibilityByXpath(driver, "//a[@data-target='#flight']");
+		commons.clickElementByXpath(driver, "//a[@data-target='#flight']");
+		Thread.sleep(commons.shortest);
+		
 		if (flightTripType != null && !"".equalsIgnoreCase(flightTripType))
 			commons.selectByVisibleTextForEleXpath(driver, "//select[@name='flightTripType']", flightTripType);
 		if (flightTravelType != null && !"".equalsIgnoreCase(flightTravelType))
 			commons.selectByVisibleTextForEleXpath(driver, "//select[@name='flightTravelType']", flightTravelType);
 		if (flightTravelClass != null && !"".equalsIgnoreCase(flightTravelClass))
 			commons.selectByVisibleTextForEleXpath(driver, "//select[@name='flightTravelClass']", flightTravelClass);
+		if (isCallingCardRequired)
+			commons.clickElementById(driver, "callingCardRequired");
+		if (isInsuranceRequired)
+			commons.clickElementById(driver, "insuranceRequired");
+		if (isVisaRequired)
+			commons.clickElementById(driver, "visaRequired");
 		if (flightFromLocation != null && !"".equalsIgnoreCase(flightFromLocation))
 			commons.setValueToElementById(driver, "flightFromLocation_value", flightFromLocation);
 		if (flightToLocation != null && !"".equalsIgnoreCase(flightToLocation))
