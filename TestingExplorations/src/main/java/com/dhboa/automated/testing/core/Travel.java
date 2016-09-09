@@ -61,6 +61,7 @@ public class Travel {
 		}
 		for (String fileName : travelPropsList.keySet()) {
 			try {
+				logger.info("----------------------------------------------------------------------------------");
 				travelProps = travelPropsList.get(fileName);
 				commons.login(driver, travelProps.getProperty("travel.credentials.initiator"));
 				travelActions.clickOnTravel(driver);
@@ -76,14 +77,17 @@ public class Travel {
 				Thread.sleep(commons.longest);
 				travelActions.clickOnTravel(driver);
 				commons.logout(driver);
+				flight.claimTask(driver, travelProps, logger, fileName);
+				flight.revokeTask(driver, travelProps, logger, fileName);
 				flight.approvalFlow(driver, travelProps, logger, fileName);
 				logger.info("DH Automation test case : Travel {}: travelFlow : Test Case Successful", fileName);
+				logger.info("----------------------------------------------------------------------------------");
 			} catch (Exception e) {
 				logger.info("DH Automation test case : Travel {}: travelFlow : Test Case failed", fileName);
 				logger.error("Exception details {}", e);
+				commons.logout(driver);
 			}
-		}
-		
+		}		
 		if(isWebApp){
 			onAfterTest();
 		}

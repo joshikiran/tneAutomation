@@ -19,7 +19,7 @@ public class TravelActions {
 		commons.clickOnMenuItem(driver, "travel");
 	}
 
-	public void clickOnMyRequests(WebDriver driver) throws InterruptedException {
+	public void clickOnMyRequests(WebDriver driver) throws InterruptedException {		
 		commons.clickOnMenuItem(driver, "myrequests");
 	}
 
@@ -113,14 +113,14 @@ public class TravelActions {
 	public void checkMyRequestForATransaction(WebDriver driver, String taskId) throws InterruptedException {
 		// Verify if it is saved
 		myInboxActions.searchByReference(driver, taskId);
-		commons.isElementPresentByXpath(driver, "//tr[@ng-repeat='request in travelRequests.content']");
+		commons.checkElementPresentByXpath(driver, "//tr[@ng-repeat='request in travelRequests.content']");
 		commons.clickOnMenuItem(driver, "travel");
 		Thread.sleep(commons.longest);
 	}
 
 	public void checkDraftsByTravelDescription(WebDriver driver, String travelDescription) throws InterruptedException {
 		// It is assumed that you are on drafts page
-		commons.isElementPresentByXpath(driver,
+		commons.checkElementPresentByXpath(driver,
 				".//*[@id='container']//table/tbody/tr[td/text()='" + travelDescription + "']/td[6]/a");
 		Thread.sleep(commons.longest);
 	}
@@ -144,7 +144,7 @@ public class TravelActions {
 
 	public void withdrawTravelRequest(WebDriver driver, String taskId) throws InterruptedException {
 		myInboxActions.searchByReference(driver, taskId);
-		commons.isElementPresentByXpath(driver, "//tr[@ng-repeat='request in travelRequests.content']");
+		commons.checkElementPresentByXpath(driver, "//tr[@ng-repeat='request in travelRequests.content']");
 		commons.clickElementByXpath(driver, ".//*[@id='container']//table/tbody/tr/td[6]/a");
 		Thread.sleep(commons.longest);
 		commons.clickElementByXpath(driver, "//button[@ng-click='withdraw()']");

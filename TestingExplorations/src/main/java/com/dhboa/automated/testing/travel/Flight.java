@@ -41,6 +41,7 @@ public class Flight {
 		}
 		String description = null;
 		if (toBeExecuted) {
+			logger.info("DH Automation test case : Travel {}: createTravelDraft : Starting the test case ", fileName);
 			// go to new travel request and click on it. Assuming you have
 			// already
 			// clicked travel
@@ -70,6 +71,7 @@ public class Flight {
 			toBeExecuted = false;
 		}
 		if (toBeExecuted) {
+			logger.info("DH Automation test case : Travel {}: checkTravelDraft : Starting the test case ", fileName);
 			// Go to drafts page and then check the drafts assuming you have
 			// already
 			// clicked travel
@@ -96,6 +98,7 @@ public class Flight {
 			toBeExecuted = false;
 		}
 		if (toBeExecuted) {
+			logger.info("DH Automation test case : Travel {}: editTravelDraft : Starting the test case ", fileName);
 			// Go to drafts page and then check the drafts assuming you have
 			// already
 			// clicked travel
@@ -122,6 +125,7 @@ public class Flight {
 			toBeExecuted = false;
 		}
 		if (toBeExecuted) {
+			logger.info("DH Automation test case : Travel {}: discardTravelDraft : Starting the test case ", fileName);
 			// Go to drafts page and then check the drafts assuming you have
 			// already
 			// clicked travel
@@ -149,6 +153,7 @@ public class Flight {
 			toBeExecuted = false;
 		}
 		if (toBeExecuted) {
+			logger.info("DH Automation test case : Travel {}: submitTravelRequest : Starting the test case ", fileName);
 			travelReferenceNo = travelActions.submitTravelRequest(driver);
 			props.setProperty("travel.flight.referenceNo", travelReferenceNo);
 			commonActions.modifyProperties(defaultFilePath + "Travel\\travelRequest.properties",
@@ -174,6 +179,7 @@ public class Flight {
 			toBeExecuted = false;
 		}
 		if (toBeExecuted) {
+			logger.info("DH Automation test case : Travel {}: showApprovals : Starting the test case ", fileName);
 			// Assuming you are in travel request page and show approvals is
 			// enabled
 			travelActions.showApprovers(driver);
@@ -192,15 +198,22 @@ public class Flight {
 		String travelReferenceNo = null;
 		try {
 			toBeExecuted = Boolean.valueOf(props.getProperty("travel.test.flight.withdrawTravelRequest"));
-			travelReferenceNo=props.getProperty("travel.flight.referenceNo");
+			travelReferenceNo = props.getProperty("travel.flight.referenceNo");
 		} catch (Exception e) {
 			toBeExecuted = false;
 		}
 		if (toBeExecuted) {
-			//Assuming you are on the home page
+			logger.info("DH Automation test case : Travel {}: withdrawTravelRequest : Starting the test case ",
+					fileName);
+			// Assuming you are on the home page
 			travelActions.clickOnMyRequests(driver);
 			travelActions.withdrawTravelRequest(driver, travelReferenceNo);
-			logger.info("DH Automation test case : Travel {}: withdrawTravelRequest : This test case is successfully executed",
+			logger.info(
+					"DH Automation test case : Travel {}: withdrawTravelRequest : This test case is successfully executed",
+					fileName);
+		} else {
+			logger.info(
+					"DH Automation test case : Travel {}: withdrawTravelRequest : This test case is not enabled hence it is being skipped",
 					fileName);
 		}
 	}
@@ -226,6 +239,9 @@ public class Flight {
 				// user$$$option$$$toModifyOptions$$$toBeExecuted
 				options = option.split("\\$\\$\\$");
 				if (Boolean.valueOf(options[3])) {
+					logger.info(
+							"DH Automation test case : Travel {}: approvalFlow : Starting the test case for the user {}",
+							fileName, options[0]);
 					isPersonal = (options[0].equalsIgnoreCase("traveldesk")) ? false : true;
 					currentApprover = travelProps.getProperty("travel.credentials.user." + options[0]);
 					myInboxActions.inboxAction(driver, travelRefNo, options[1], commonActions.longest, currentApprover,
@@ -246,4 +262,68 @@ public class Flight {
 		}
 	}
 
+	public void claimTask(WebDriver driver, Properties travelProps, Logger logger, String fileName)
+			throws InterruptedException {
+		boolean toBeExecuted = false;
+		String travelRefNo = null;
+		String travelDesk = null;
+		try {
+			toBeExecuted = Boolean.valueOf(travelProps.getProperty("travel.test.flight.claimTask"));
+		} catch (Exception e) {
+			toBeExecuted = false;
+		}
+		if (toBeExecuted) {
+			logger.info("DH Automation test case : Travel {}: claimTask : Starting the test case ", fileName);
+			// login as the travel desk and claim the task
+			travelDesk = travelProps.getProperty("travel.credentials.user.traveldesk");
+			commonActions.login(driver, travelDesk);
+			commonActions.clickOnMenuItem(driver, "traveltask");
+			travelRefNo = travelProps.getProperty("travel.flight.referenceNo");
+			Thread.sleep(commonActions.longest);
+			myInboxActions.searchByReference(driver, travelRefNo);
+			commonActions.checkElementPresentByXpath(driver, ".//*[@id='inboxTaskContainer']//table/tbody/tr/td[4]/a");
+			commonActions.clickElementByXpath(driver, ".//*[@id='inboxTaskContainer']//table/tbody/tr/td[4]/a");
+			Thread.sleep(commonActions.longest);
+			commonActions.logout(driver);			
+			logger.info("DH Automation test case : Travel {}: claimTask : This test case is successfully executed ",
+					fileName);
+		} else {
+			logger.info(
+					"DH Automation test case : Travel {} : claimTask : This test case is not enabled hence it is being skipped",
+					fileName);
+		}
+	}
+
+	public void revokeTask(WebDriver driver, Properties travelProps, Logger logger, String fileName)
+			throws InterruptedException {
+		boolean toBeExecuted = false;
+		String travelRefNo = null;
+		String travelDesk = null;
+		try {
+			toBeExecuted = Boolean.valueOf(travelProps.getProperty("travel.test.flight.revokeTask"));
+		} catch (Exception e) {
+			toBeExecuted = false;
+		}
+		if (toBeExecuted) {
+			logger.info("DH Automation test case : Travel {}: revokeTask : Starting the test case ", fileName);
+			// login as the travel desk and claim the task
+			travelDesk = travelProps.getProperty("travel.credentials.user.traveldesk");
+			commonActions.login(driver, travelDesk);
+			commonActions.clickOnMenuItem(driver, "personaltask");
+			travelRefNo = travelProps.getProperty("travel.flight.referenceNo");
+			Thread.sleep(commonActions.longest);
+			myInboxActions.searchByReference(driver, travelRefNo);
+			commonActions.checkElementPresentByXpath(driver, ".//*[@id='inboxTaskContainer']//table/tbody/tr/td[4]/a");
+			commonActions.clickElementByXpath(driver, ".//*[@id='inboxTaskContainer']//table/tbody/tr/td[4]/a");
+			Thread.sleep(commonActions.longest);
+			myInboxActions.revokeAction(driver);
+			commonActions.logout(driver);
+			logger.info("DH Automation test case : Travel {}: revokeTask : This test case is successfully executed ",
+					fileName);
+		} else {
+			logger.info(
+					"DH Automation test case : Travel {} : revokeTask : This test case is not enabled hence it is being skipped",
+					fileName);
+		}
+	}
 }

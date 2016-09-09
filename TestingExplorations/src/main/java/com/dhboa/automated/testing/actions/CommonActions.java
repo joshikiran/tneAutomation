@@ -55,7 +55,7 @@ public class CommonActions {
 
 	public void maximizeWindow(WebDriver driver) {
 		driver.manage().window().maximize();
-	}	
+	}
 
 	public void login(WebDriver driver, String applicationUrl, String userNameElId, String passwordElId,
 			String loginElId, String userName, String password) throws InterruptedException {
@@ -94,7 +94,7 @@ public class CommonActions {
 		driver.findElement(By.xpath(xpath)).click();
 	}
 
-	public void isElementPresentById(WebDriver driver, String id) throws InterruptedException {
+	public void checkElementPresentById(WebDriver driver, String id) throws InterruptedException {
 		boolean elementPresent = true;
 		try {
 			elementPresent = (driver.findElement(By.id(id)) == null && driver.findElement(By.id(id)).isDisplayed())
@@ -128,7 +128,7 @@ public class CommonActions {
 			Assert.assertFalse(elementPresent, "Element found with id " + elementId);
 	}
 
-	public void isElementPresentByXpath(WebDriver driver, String xpath) throws InterruptedException {
+	public void checkElementPresentByXpath(WebDriver driver, String xpath) throws InterruptedException {
 		boolean elementPresent = true;
 		try {
 			elementPresent = (driver.findElement(By.xpath(xpath)) == null
@@ -220,26 +220,47 @@ public class CommonActions {
 			clickElementByXpath(driver, "//div[@data-target='#inbox']");
 		else if (menuItemName.equalsIgnoreCase("reports"))
 			clickElementByXpath(driver, "//div[@data-target='#reports']");
-		else if (menuItemName.equalsIgnoreCase("newtravelrequest"))
+		else if (menuItemName.equalsIgnoreCase("newtravelrequest")) {
+			if (!isElementPresentByXPath(driver, ".//*[@id='travel' and contains(@class,'collapse in')]"))
+				clickOnMenuItem(driver, "travel");
 			clickElementByXpath(driver, "//a[@href='#/travel/new']");
-		else if (menuItemName.equalsIgnoreCase("myrequests"))
+		} else if (menuItemName.equalsIgnoreCase("myrequests")) {
+			if (!isElementPresentByXPath(driver, ".//*[@id='travel' and contains(@class,'collapse in')]"))
+				clickOnMenuItem(driver, "travel");
 			clickElementByXpath(driver, "//a[@href='#/travel/myrequests']");
-		else if (menuItemName.equalsIgnoreCase("mytraveldrafts"))
+		} else if (menuItemName.equalsIgnoreCase("mytraveldrafts")) {
+			if (!isElementPresentByXPath(driver, ".//*[@id='travel' and contains(@class,'collapse in')]"))
+				clickOnMenuItem(driver, "travel");
 			clickElementByXpath(driver, "//a[@href='#/travel/mydrafts']");
-		else if (menuItemName.equalsIgnoreCase("newexpenseclaim"))
+		} else if (menuItemName.equalsIgnoreCase("newexpenseclaim")) {
+			if (!isElementPresentByXPath(driver, ".//*[@id='expense' and contains(@class,'collapse in')]"))
+				clickOnMenuItem(driver, "expense");
 			clickElementByXpath(driver, "//a[@href='#/expense/new']");
-		else if (menuItemName.equalsIgnoreCase("myclaims"))
+		} else if (menuItemName.equalsIgnoreCase("myclaims")) {
+			if (!isElementPresentByXPath(driver, ".//*[@id='expense' and contains(@class,'collapse in')]"))
+				clickOnMenuItem(driver, "expense");
 			clickElementByXpath(driver, "//a[@href='#/expense/myclaims']");
-		else if (menuItemName.equalsIgnoreCase("myclaimdrafts"))
+		} else if (menuItemName.equalsIgnoreCase("myclaimdrafts")) {
+			if (!isElementPresentByXPath(driver, ".//*[@id='expense' and contains(@class,'collapse in')]"))
+				clickOnMenuItem(driver, "expense");
 			clickElementByXpath(driver, "//a[@href='#/expense/mydrafts']");
-		else if (menuItemName.equalsIgnoreCase("personaltask"))
+		} else if (menuItemName.equalsIgnoreCase("personaltask")) {
+			if (!isElementPresentByXPath(driver, ".//*[@id='inbox' and contains(@class,'collapse in')]"))
+				clickOnMenuItem(driver, "myinbox");
 			clickElementByXpath(driver, "//a[@href='#/inbox']");
-		else if (menuItemName.equalsIgnoreCase("traveltask"))
+		} else if (menuItemName.equalsIgnoreCase("traveltask")) {
+			if (!isElementPresentByXPath(driver, ".//*[@id='inbox' and contains(@class,'collapse in')]"))
+				clickOnMenuItem(driver, "myinbox");
 			clickElementByXpath(driver, "//a[@href='#/inbox/TRAVEL_DESK']");
-		else if (menuItemName.equalsIgnoreCase("viewreports"))
+		} else if (menuItemName.equalsIgnoreCase("viewreports")) {
+			if (!isElementPresentByXPath(driver, ".//*[@id='reports' and contains(@class,'collapse in')]"))
+				clickOnMenuItem(driver, "reports");
 			clickElementByXpath(driver, "#/reports/manage");
-		else if (menuItemName.equalsIgnoreCase("viewdashboards"))
+		} else if (menuItemName.equalsIgnoreCase("viewdashboards")) {
+			if (!isElementPresentByXPath(driver, ".//*[@id='reports' and contains(@class,'collapse in')]"))
+				clickOnMenuItem(driver, "reports");
 			clickElementByXpath(driver, "#/dashboard/view");
+		}
 	}
 
 	public void clickOnSettings(WebDriver driver, String option) throws InterruptedException {
@@ -292,5 +313,27 @@ public class CommonActions {
 		String creds[] = credentials.split("#");
 		login(driver, LOGIN_URL, "username", "password", "btnLogIn", creds[0], creds[1]);
 		Thread.sleep(normal);
+	}
+
+	public boolean isElementPresentByXPath(WebDriver driver, String xpath) throws InterruptedException {
+		boolean elementPresent = false;
+		try {
+			elementPresent = (driver.findElement(By.xpath(xpath)) == null
+					&& driver.findElement(By.xpath(xpath)).isDisplayed()) ? false : true;
+		} catch (Exception e) {
+			elementPresent = false;
+		}
+		return elementPresent;
+	}
+
+	public boolean isElementPresentById(WebDriver driver, String id) throws InterruptedException {
+		boolean elementPresent = false;
+		try {
+			elementPresent = (driver.findElement(By.id(id)) == null && driver.findElement(By.id(id)).isDisplayed())
+					? false : true;
+		} catch (Exception e) {
+			elementPresent = false;
+		}
+		return elementPresent;
 	}
 }

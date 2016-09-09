@@ -26,7 +26,7 @@ public class MyInboxActions {
 
 		// Now the travel user will have to approve the task
 		openInboxTask(driver, taskId, isPersonal);
-		if (user.equalsIgnoreCase("traveldesk") && toModifyOptions)
+		if (option.equalsIgnoreCase("reservationdone") && toModifyOptions)
 			modifyTravelOptions(driver);
 
 		if (option.equalsIgnoreCase("reservationdone"))
@@ -79,6 +79,7 @@ public class MyInboxActions {
 		commons.setValueToElementByXpath(driver, "//input[@ng-model='modalRequest.bookingCost']", "40000");
 		commons.setValueToElementByXpath(driver, "//textarea[@ng-model='modalRequest.travelDeskComments']",
 				"Please approve it urgently as the cost is varying");
+		commons.setValueToElementByXpath(driver, "//input[@ng-model='modalRequest.bookingRefNo']", "Booking Reference Number");
 		commons.clickElementByXpath(driver, "//button[text()='Save']");
 	}
 
